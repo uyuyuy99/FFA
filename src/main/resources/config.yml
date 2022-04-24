@@ -1,0 +1,435 @@
+# Config file for mcFFA
+# Plugin made by uyuyuy99
+
+mysql:
+  host: 'localhost'
+  port: '3306'
+  database: 'mcffa'
+  user: 'root'
+  pass: ''
+options:
+  show-login-messages: true
+  sign-join-look-for: 'New match'
+  sign-running-look-for: 'Running'
+  sign-full-look-for: 'Lobby full'
+  sign-down-look-for: 'Lobby down'
+  starting-matches: 2
+  match-sign-region:
+    ==: me.uyuyuy99.ffa.Region
+    z1: 0
+    y1: 0
+    y2: 0
+    z2: 0
+    x2: 0
+    x1: 0
+  lobby:
+    x: 0
+    y: 0
+    z: 0
+    yaw: 0
+    pitch: 0
+  secs-offline-to-eliminate: 20
+  starting-lives: 3
+  save-last-players-hit: 3
+  save-stats-every-seconds: 600
+  headshot-range: 42
+  invisible-time: 90
+  cant-hurt-for: 7000
+  cant-hurt-for-after-spawning: 4500
+  cant-hurt-magician-tp: 1200
+  magician-blind-ticks: 200
+  blocked-arrow-speed: 0.1
+  blocked-headshot-y-speed: 0.5
+  blocked-headshot-velocity-multiplier: 1.4
+  spec-stay-away-dist-squared: 11
+  spec-stay-away-move-away: 3
+  pyro-explosion-radius: 4
+  assassin-poison-ticks: 180
+  no-interact:
+  - 'FURNACE'
+  - 'WORKBENCH'
+  - 'CHEST'
+  - 'ANVIL'
+  - 'BED_BLOCK'
+  - 'ENCHANTMENT_TABLE'
+  - 'DISPENSER'
+  can-interact-lobby:
+  - 'STONE_BUTTON'
+  attempts-to-find-good-spawn: 30
+  spawn-away-from-player-distance: 10
+  spawn-close-to-player-distance: 30
+  max-players-to-spawn-near-others: 6
+  kill-combo-ms: 5000
+  sacrifce-warmup-1: 240
+  sacrifce-warmup-2: 120
+  mobs-spawn-blank-times-less: 5
+  deathmatch-cooldown-ms: 20000
+  deathmatch-starting-players-factor: 4
+  deathmatch-max-threshold: 8
+  deathmatch-max-lives: 1
+  camping-cooldown: 90
+  camping-move-rate-threshold: 7
+  camping-move-rate-threshold-sniper: 4
+  camping-check-ms: 10000
+  grace-period-respawn-if-suffocating: 10
+  post-match-start-ticks: 80
+  update-player-entities-after-ticks: 40
+  hotbar-placeholder: 'GLASS_PANE'
+  bomber-death-explode-power: 1.5
+  winner-box:
+    x: 0
+    y: 0
+    z: 0
+    yaw: 0
+    pitch: 0
+  max-scoreboard-entries: 14
+  control-item-cooldown-ms: 2000
+  arrow-blocked-tp-above: 4
+  tip-frequency-min: 30
+  tip-frequency-max: 50
+  hunter-arrows: 3
+  lb-reload-every: 7200
+  ach-line-length: 32
+  chicken-bomb-chance: 70
+  chicken-bomb-power: 4
+  ach-min-players: 5
+  bomber-fuse-ticks: 48
+  max-ticks-last-swam-for-pirate-boat: 10
+  ticks-per-cannon-tracer: 1
+  cannonball-speed-limiter: 12.5
+  cannonball-explosion-radius: 5
+messages:
+  login: '&8[&2+&8] &e{name}'
+  logout: '&8[&4-&8] &e{name}'
+  welcome: '&dWelcome &7{name} &dto the server!'
+  countdown: '&aThe match is starting in &7&o{time}&a.'
+  not-enough-players: ' &7&oThere are not enough players to start the game.'
+  someone-left: ' &7&oSomeone did &8&o/standby &7&oor left the game.'
+  no-permission: '&cWhat you tryin'' tah do dat fo, foo? You ain''t got puh-mission!'
+  no-console: '&cThat command can only be run in-game.'
+  join-lobby: '&e{name} joined the lobby! &7({players} players)'
+  out-of-game: '&4{name} &7is out of the game! &4{players} &7players remain.'
+  you-lost: '&4&lYou are out of the game! You ranked &e&l{rank} &4&lout of &e&l{starting}&4&l.'
+  win: |
+       
+       &6&l    {name} won the game!
+       
+  outside-arena: '&cYou can''t go outside the arena!'
+  match-reset: '&c&lThe match has been force-quit by an admin.'
+  match-remove: '&4&lThe game lobby you were in has been removed! Please try connecting to another lobby.'
+  sign-join:
+  - '&nMC-FFA {num}'
+  - '&a&lNew match!'
+  - '{players}/{max} Online'
+  - '&aStarts in {time}'
+  sign-running:
+  - '&nMC-FFA {num}'
+  - '&e&lRunning'
+  - '{players}/{max} Online'
+  - '&e&l{left} alive'
+  sign-full:
+  - '&nMC-FFA {num}'
+  - '&c&lLobby full!'
+  - '{players}/{max} Online'
+  - ' '
+  sign-down:
+  - '&nMC-FFA {num}'
+  - '&4&lLobby down!'
+  - N/A Online
+  - ' '
+  match-full: '&cThat match is full! Only VIPs can join full games. Get VIP at &6http://mcffa.net/vip'
+  match-down: '&4That lobby is currently down. Please try another.'
+  eliminated-forcefully: '&4{name} &7was eliminated forcefully! &4{players} &7players remain.'
+  offline-too-long: '&4{name} &7was offline too long and forfeit! &4{players} &7players remain.'
+  no-one-won: '&6&lThe game glitched or something, so nobody won!'
+  plugin-reload: '&e&lThe server has been reloaded.'
+  spectate-start: '[]    &dYou are now spectating the game.[]    &dUse &7/tp <player> &dto teleport and &7/leave &dto return to lobby.[] '
+  spectate-stop: ''
+  arena-reloading: '&4Could not find available arena. You have been sent back to the main lobby while the arena is reloading.'
+  suicide: '&4{name} &7committed suicide! &4{players} &7players remain.'
+  erosion-caught-up: '&4&oThe erosion is catching up to you. Keep running!'
+  start-updating-stat-columns: '&eUpdating statistic columns on player table...'
+  updated-stat-column: '  &eAdded statistic column: &7{stat}&e.'
+  done-updating-stat-columns: '&eSuccessfully updated statistics columns!'
+  you-killed-player: '&7You {killed} &b{name}&7!'
+  didnt-get-life: '&cYou didn''t receive an extra life.'
+  got-life: '&aYou got an extra life! You now have &c{lives} &alives.'
+  cant-leave: '&cYou can''t leave the match while fighting.[]If you wish to forfeit, type &7/forfeit&c.'
+  you-were-headshotted: '&cYou were headshotted!'
+  turned-invisible: '&e&oYou are now invisible!'
+  still-invisible: '&eYou will still be invisible for another &7{secs} &eseconds.'
+  no-longer-invisible: '&eYou are no longer invisible.'
+  you-have-blinded: '&5You have blinded &7{name}&5.'
+  shot-blocked: '&cYour shot was blocked.'
+  headshot-blocked: '&c&oYour headshot was blocked by &7&o{name}&c&o!'
+  type-to-change-class: '&aType &7/kit &ato change your kit.'
+  stay-away-from-specs: '&cDon''t get so close to the fighters!'
+  food-heals-health: '&cYou can''t eat food on this server.[]&a&oRight-click food &cto heal your hearts!'
+  compass-pointing-to: '&7Your compass is pointing to &e{name}&7.'
+  sacrificed: '&c{name} &7was sacrificed to the gods! If no one is killed within {min} minutes, another sacrifice will be made.'
+  deathmatch: '&c&lDeathmatch! Each player lost &7&l{liveslives}&c&l!'
+  camping: '&c{name} &7was killed for camping!'
+  started: '[]    &a&lThe game has started with {players} players![] '
+  no-match-found: '&cNo matches available!'
+  players-left: '&7&l{left} &a&lof &7&l{starting} &a&lplayers remain.'
+  no-longer-standing-by: '[]    &aYou will be playing next round.[] '
+  standing-by: '[]    &cYou will NOT be playing next round.[]    &cTo undo this, relog or type &7/standby &cagain.[] '
+  spectate-deprecated: '&7/spectate &cis no longer a command. To spectate, use the item in your inventory. To opt out of the game, type /standby.'
+  opted-out: '[]    &cYou have opted out of this round.[]    &cTo play the next match, type &7/standby&c.[] '
+  cant-tp-if-not-spec: '&cYou can''t TP if you''re not spectating!'
+  not-in-arena: '&cThat player is not in the arena.'
+  no-players: '&cThere are no players online to teleport to.'
+  teleported: '&aTeleported to {displayname}&a.'
+  players-online: '&9There are &e{players}/{max} &9players online:'
+  scoreboard-kills: '&9&lKills:'
+  didnt-choose-kit: '[]    &4&lYou forgot to choose a kit!&r[]    &4&lTo view the kit menu, type &7&l/kit&4&l.[] '
+  players-online-remaining: '&aThere are &e{left} &aout of &e{starting} &aplayers remaining.'
+  lives-deprecated: '&4&l/lives is no longer a command![]&4&lYour &e&lXP Level &4&lshows your remaining lives.'
+  rules: '&c&lRULES:[]&c  1. NO hacked clients.[]&c  2. NO spamming the chat.[]&c  3. NO teaming up against players.'
+  forfeit: '&4{name} &7forfeit! &4{players} &7players remain.'
+  vip-spec-before-game: '&cOnly VIPs can spectate before the game starts![]&cTo get VIP, click on this link: &6&ohttp://mcffa.net/kits'
+  eliminated-forcefully-god-of-pigs: '&4{name} &7was eliminated by the God of Pigs! &4{players} &7players remain.'
+  motd: '&4&k&l|||| &f&lFree-for-all Kit PvP! &4&k&l||||[]&6&l--> &2mcFFA.net&6&l <--'
+  hotbar-placeholder-name: ' '
+  random-kit: '&a&oYou will spawn as a random class!'
+  headshot: ' &a&l&o[good] &e&l&oYou got a headshot! &a&l&o[good]'
+  stop-blocking-arrows: '&cStop blocking arrows!'
+  parkour-teleported: '&aTeleported to parkour checkpoint.'
+  parkour-new-checkpoint: '&aYou have reached a new parkour checkpoint!'
+  compass-pointing-to-coords: '&7Your compass is pointing to &e{name} &7(&e{x}&7, &e{z}&7).'
+  leaderboard-prefix-1: '&b#1 '
+  leaderboard-prefix-2: '&c#2 '
+  leaderboard-prefix-3: '&e#3 '
+  leaderboard-user-prefix: '&f'
+  leaderboard-desc-prefix: '&8'
+  leaderboard-stats-added: '[]    &6&l[good]&b&l {num} leaderboard stats have been added! []    &b&l   To see them, type: &6&l/lb[] '
+  already-ignored: '&cYou are already ignoring &7{name}&c! To stop[]&cignoring him/her, type &7/unignore {name} &cor relog.'
+  ignored: '&aYou are now ignoring &e{name}&a. To stop[]&aignoring him/her, type &7/unignore {name} &aor relog.'
+  already-unignored: '&cYou are not currently ignoring &7{name}&c.'
+  unignored: '&aYou are no longer ignoring &e{name}&a.'
+  ignoring-you-prefix: '&dPlayers ignoring you: &7'
+  no-players-ignoring-you: '&cNo players are ignoring you.'
+  you-are-ignored: '&cSorry, but &7{name} &cis currently ignoring you!'
+  not-ignoring-players: '&cYou are not ignoring any players.'
+  you-ignoring-prefix: '&dYou''re ignoring: &7'
+  super-compass-pointing-to: '[]&7Your compass is pointing to &e{name}&7.[]&7He is a &a{kit}&7 and has &a{lives} lives&7 and &a{hearts} hearts&7.[]&7He''s holding &a{food} hearts&7 worth of food and &a{arrows} arrows&7.'
+  you-got-arrows-wolves: '&eYou got &7{arrows} arrows&e and &7{wolves} wolves&e.'
+  lb-title-prefix: '&l'
+  lb-rank-prefix: '&4&l#'
+  lb-player-prefix: ''
+  lb-desc-prefix: '&8'
+  random-kit-on: '&a&oYou will spawn as a random class every life![]&a&oTo disable this, type &7&o/random off&a&o or relog.'
+  random-kit-off: '&a&oYou will no longer spawn as a random class every life.'
+  achievements-info: ''
+  achievements-title: '&1&lAchievements'
+  secret-achievements-title: '&5&lSecret Achievements'
+  invalid-achievement: ' [] []&c&lYou just got an achievement with an invalid ID (&e{id}&c&l). Please report this to the server owner or post about it on &e&lhttp://mcffa.net[] '
+  ach-name-secret: '???'
+  ach-desc-locked: '&7{line}'
+  ach-desc-unlocked: '&f{line}'
+  ach-icon-locked: ENDER_CHEST:0
+  achieved-1: ' &4&l&k|&r {name}&3&l was awarded an achievement:&r[] &4&l&k|&r &6\"'
+  achieved-2: '&6\"'
+  achieved-color: 'gold'
+  achieved-name-prefix: '&3&l'
+  achieved-you-prefix: '&9&l'
+  swine-flu: '&e&oYou gave the swine flu to &7&o{name}&e&o!'
+  vip-prefix: '&9[VIP] '
+  owner-prefix: '&c[Owner] '
+  winner-prefix: '&6[Winner] '
+  cannon-countdown-title-3:
+    ==: me.uyuyuy99.ffa.Title
+    title: '&8&l3'
+    subtitle: ''
+    fadeIn: 0
+    stay: 25
+    fadeOut: 0
+  cannon-countdown-title-2:
+    ==: me.uyuyuy99.ffa.Title
+    title: '&8&l2'
+    subtitle: ''
+    fadeIn: 0
+    stay: 25
+    fadeOut: 0
+  cannon-countdown-title-1:
+    ==: me.uyuyuy99.ffa.Title
+    title: '&8&l1'
+    subtitle: ''
+    fadeIn: 0
+    stay: 20
+    fadeOut: 0
+arenas:
+  loading-ticks: 10
+  grace-period: 200
+  min-players: 2
+  countdown: 180
+  countdown-after-reset: 120
+  max-players: 24
+  distance-to-move-back-in: 5
+  last-locations-saved: 12
+  disabled: []
+  keep-blocks:
+  - GLASS
+  - ICE
+  - CHEST
+  - FURNACE
+  - BREWING_STAND
+  spawn-above: 0.2
+  breakables:
+  - THIN_GLASS
+  - TORCH
+  - LONG_GRASS
+  - DEAD_BUSH
+  - WEB
+  - SNOW
+  - YELLOW_FLOWER
+  - RED_ROSE
+  - BROWN_MUSHROOM
+  - RED_MUSHROOM
+  - VINE
+  min-for-achievements: 5
+kits:
+  premium-tag: '&8&o[Premium]'
+  dont-own-tag: '&cBuy this kit at &6mcffa.net/kits'
+  dont-own: '&cYou don''t have this kit - purchase it at &6http://mcffa.net/kits'
+  dont-change: '&6Don''t change kits'
+  next-page: '&6Next Page -->'
+  previous-page: '&6<-- Previous Page'
+  choose-kit: '&4&lChoose Your Kit!'
+  choose-kit-premium: ' &8[Premium]'
+  kit-name: '&a&o{kit}'
+  not-a-kit: '&cThat is not a valid kit.[]Type &7/kit &cto choose a kit.'
+  you-are-kit: '&aYou are now playing as a &b{kit}&a!'
+  you-will-be-kit: '&aYou will be playing as a &b{kit}&a when you spawn!'
+  you-now-have-kit: '&6&lYou now own the &b&l{kit} &6&lkit!'
+  you-no-longer-have-kit: '&c&lYou no longer own the &b&l{kit} &c&lkit.'
+tips:
+  - '&3Want more classes? Go to &bhttp://mcffa.net/kits'
+  - '&3Have a question/suggestion? Post it in our forums: &bhttp://mcffa.net/forum'
+  - '&8[&4&k|||||&8] &3Premium classes are now cheaper when bought together. Get all 5 as a bundle: &6http://mcffa.net/kits'
+names:
+  default: '&7{name}&r'
+  ingame: '&b{name}&r'
+  winner: '&6{name}&r'
+  owner: '&4{name}&r'
+  vip: '&9{name}&r'
+  default-tab: '&7{name}'
+  ingame-tab: '&b{name}'
+  winner-tab: '&6{name}'
+  owner-tab: '&4{name}'
+  vip-tab: '&9{name}'
+sounds:
+  test:
+    type: ENTITY_GENERIC_EXPLODE
+    volume: 0.6
+    pitch: 2
+  eat:
+    type: ITEM_FLINTANDSTEEL_USE
+    volume: 0.75
+    pitch: 0.5
+  magician-tp:
+    type: BLOCK_PORTAL_TRAVEL
+    volume: 0.3
+    pitch: 2
+  magician-poof:
+    type: ENTITY_GHAST_SHOOT
+    volume: 0.8
+    pitch: 2
+  magician-blind:
+    type: ENTITY_GENERIC_EXPLODE
+    volume: 0.6
+    pitch: 2
+  shot-blocked:
+    type: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 1
+    pitch: 0.6
+  swine-flu:
+    type: ENTITY_PIG_DEATH
+    volume: 2
+    pitch: 1
+  countdown:
+    type: BLOCK_NOTE_BLOCK_PLING
+    volume: 1
+    pitch: 0.5
+  countdown-final:
+    type: BLOCK_NOTE_BLOCK_PLING
+    volume: 1
+    pitch: 1
+  assassin-invis:
+    type: ENTITY_EVOKER_CAST_SPELL
+    volume: 0.7
+    pitch: 2
+particles:
+  test:
+    type: HUGE_EXPLOSION
+    diffH: 2
+    diffV: 0.8
+    speed: 0.1
+    count: 200
+  notes:
+    type: NOTE
+    diffH: 1.5
+    diffV: 0.8
+    speed: 1
+    count: 80
+  magician-tp:
+    type: SPELL_WITCH
+    diffH: 1
+    diffV: 0.8
+    speed: 0.1
+    count: 250
+  magician-poof:
+    type: SQUID_INK
+    diffH: 0.15
+    diffV: 0.5
+    speed: 1.5
+    count: 30
+  magician-blind:
+    type: SPELL_INSTANT
+    diffH: 0.6
+    diffV: 0.8
+    speed: 1
+    count: 50
+  shot-blocked:
+    type: CRIT
+    diffH: 0.2
+    diffV: 0.2
+    speed: 0.4
+    count: 15
+  headshot-blocked:
+    type: CLOUD
+    diffH: 0.2
+    diffV: 0.2
+    speed: 2
+    count: 80
+  swine-flu:
+    type: SLIME
+    diffH: 0.5
+    diffV: 0.8
+    speed: 1.0
+    count: 150
+  pyro-shot:
+    type: LAVA
+    diffH: 0.5
+    diffV: 0.7
+    speed: 1.0
+    count: 300
+  assassin-invis:
+    type: FLASH
+    diffH: 0
+    diffV: 0
+    speed: 1
+    count: 1
+  cannon-tracer:
+    type: COMPOSTER
+    diffH: 0
+    diffV: 0
+    speed: 0
+    count: 1
+ploog:
+  fetch-interval: 10
+  fetch-interval-after-error: 60
+  render-interval: 3
+  main-broadcast-cooldown: 180
+  song-scroll-ticks: 5
+  song-scroll-px: 15

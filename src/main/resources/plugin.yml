@@ -1,0 +1,220 @@
+name: FFA
+version: '${project.version}'
+main: me.uyuyuy99.ffa.FFA
+api-version: 1.18
+depend: [ProtocolLib, WorldEdit, NBTAPI, Votifier]
+authors: [ uyuyuy99 ]
+description: Custom Minecraft KitPvP plugin
+website: http://mcffa.net
+commands:
+  getrandomspawnpoint:
+    description: Get a random spawn point.
+    usage: /getrandomspawnpoint
+  setname:
+    description: Sets the name of the item being held.
+    usage: /setname <colored name>
+  forcejoin:
+    description: Force a player to join the lobby.
+    usage: /forcejoin <player>
+  ffa:
+    description: FFA main plugin commands.
+    usage: /ffa <sub_command>
+    aliases: [mcffa]
+  arenalist:
+    description: Lists the available arenas and their IDs.
+    usage: /arenalist
+    aliases: [arenas]
+  a1:
+    description: Sets the 1st point for the arena boundaries.
+    usage: /a1 [y_leveL]
+  a2:
+    description: Sets the 2nd point for the arena boundaries.
+    usage: /a2 [y_leveL]
+  addarena:
+    description: Creates an arena with the given name.
+    usage: /addarena <name>
+  setarena:
+    description: Sets the region for an arena again.
+    usage: /setarena <id>
+  disablearena:
+    description: Disables arena with given ID or name.
+    usage: /disablearena <id|name>
+    aliases: [removearena]
+  enablearena:
+    description: Re-enables arena with given ID or name.
+    usage: /enablearena <id|name>
+  reloadarena:
+    description: Reloads the block of an arena.
+    usage: /removearena <id|name>
+  setspawns:
+    description: Toggles the ability to add arena spawns for the given arena.
+    usage: /setspawns <id|name>
+  showspawns:
+    description: Shows a visual representation of each spawn while setting spawns.
+    usage: /showspawns
+  clearspawns:
+    description: Removes every spawn from the arena.
+    usage: /clearspawns
+  addkit:
+    description: Adds a kit to the MySQL database.
+    usage: /addkit <name>
+  kititems:
+    description: Changes the starting items for a kit.
+    usage: /kititems [kit]
+  setspawn:
+    description: Sets the spawn for the main lobby.
+    usage: /setspawn
+  setlobby:
+    description: Sets the spawn for the waiting lobbies.
+    usage: /setlobby
+  setlobbysigns:
+    description: Sets the region for the join lobby signs.
+    usage: /setlobbysigns <1|2>
+  kit:
+    description: Change your kit.
+    usage: /kit
+    aliases: [kits, classes, class]
+  settime:
+    description: Sets the match countdown.
+    usage: /settime
+    aliases: [st]
+  kill:
+    description: Suicide.
+    usage: /kill
+    aliases: [suicide]
+  specialitem:
+    description: Gives you a special item, or lists them all.
+    usage: /specialitem [item_name]
+    aliases: [special, si]
+  setonlinemode:
+    description: Sets the online/offline mode of the server.
+    usage: /setonlinemode [true|false]
+    aliases: [setonline, onlinemode]
+  leave:
+    description: Leave the current lobby.
+    usage: /kill
+    aliases: [quit]
+  givekit:
+    description: Gives a premium class to a player.
+    usage: /givekit <player> <kit>
+    aliases: [giveclass]
+  removekit:
+    description: Takes a premium class away from a player.
+    usage: /removekit <player> <kit>
+    aliases: [removeclass]
+  giveallkits:
+    description: Gives all premium classes to a player.
+    usage: /giveallkits <player>
+    aliases: [giveallclasses]
+  removeallkits:
+    description: Takes all premium classes away from a player.
+    usage: /removeallkits <player>
+    aliases: [removeallclasses]
+  map:
+    description: Sets the arena for the match.
+    usage: /map <id|name>
+    aliases: [setmap]
+  standby:
+    description: Puts you in standby mode (opts you out of the games).
+    usage: /standby
+    aliases: [optout]
+  spectate:
+    description: DEPRECATED
+    usage: /spectate
+  tp:
+    description: Teleport to another fighter/spectator while spectating.
+    usage: /tp <player>
+    aliases: [teleport]
+  list:
+    description: Lists the online players.
+    usage: /list
+    aliases: [who, players, playerlist, online]
+  lives:
+    description: DEPRECATED
+    usage: /lives
+    aliases: [lifes, life, live]
+  help:
+    description: Lists the commands for mcFFA.
+    usage: /help
+    aliases: [?, commands]
+  rules:
+    description: Lists the rules for mcFFA.
+    usage: /rules
+  eliminate:
+    description: Eliminates you or another player.
+    usage: /eliminate [player]
+    aliases: [elim, forfeit]
+  msg:
+    description: Private message another player on the server.
+    usage: /msg <player> <message>
+    aliases: [m, message, whisper, w, t, tell]
+  stats:
+    description: View play statistics of you or another player.
+    usage: /stats [player]
+  leaderboards:
+    description: DEPRECATED
+    usage: /leaderboards
+    aliases: [lb]
+  ignore:
+    description: Ignore a player.
+    usage: /ignore <player>
+  unignore:
+    description: Stop ignoring a player.
+    usage: /unignore <player>
+  ignorelist:
+    description: Shows a list of players currently ignoring you.
+    usage: /ignorelist
+    aliases: [ignoringme]
+  setlb:
+    description: Set the sign you are looking at to a leaderboard stat.
+    usage: /setlb <lb-id>
+    aliases: [setleaderboard]
+  ping:
+    description: Show the ping, in milliseconds, of yourself or another player.
+    usage: /ping [player]
+  timecommand:
+    description: Run a command and see how long it takes to run in milliseconds.
+    usage: /timed <command>
+    aliases: [timedcommand, timed]
+  random:
+    description: Makes you a random kit.
+    usage: /random
+  warrior:
+    description: Warrior class.
+    usage: /warrior
+  sniper:
+    description: Sniper class.
+    usage: /sniper
+  butcher:
+    description: Butcher class.
+    usage: /butcher
+    aliases: [butcherr]
+  guard:
+    description: Guard class.
+    usage: /guard
+  ranger:
+    description: Ranger class.
+    usage: /ranger
+  necromancer:
+    description: Necromancer class.
+    usage: /necromancer
+    aliases: [necro]
+  bomber:
+    description: Bomber class.
+    usage: /bomber
+  ninja:
+    description: Ninja class.
+    usage: /ninja
+  assassin:
+    description: Assassin class.
+    usage: /assassin
+    aliases: [ass]
+  pyro:
+    description: Pyro class.
+    usage: /pyro
+  magician:
+    description: Magician class.
+    usage: /magician
+  hunter:
+    description: Hunter class.
+    usage: /hunter
