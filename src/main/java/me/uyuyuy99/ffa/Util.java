@@ -600,7 +600,7 @@ public abstract class Util {
 		
 		try {
 			proto.sendServerPacket(player, soundPacket);
-		} catch (InvocationTargetException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

@@ -22,7 +22,7 @@ import java.util.logging.Logger;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.FileFilterUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -762,7 +762,7 @@ public class FFA extends JavaPlugin implements Listener {
 		    				sender.sendMessage(Util.colorize("&aSuccessfully enabled arena &7" + arena.getName() + "&a!"));
 		    				
 		    				List<Integer> disabled = config.getIntegerList("arenas.disabled");
-	    					disabled.remove(new Integer(arena.getID()));
+	    					disabled.remove(Integer.valueOf(arena.getID()));
 	    					config.set("arenas.disabled", disabled);
 	    					saveConfig();
 	    				}

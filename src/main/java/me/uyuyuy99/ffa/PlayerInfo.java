@@ -270,7 +270,7 @@ public class PlayerInfo extends Util {
 					
 					try {
 						proto.sendServerPacket(player, soundPacket);
-					} catch (InvocationTargetException e) {
+					} catch (Exception e) {
 						e.printStackTrace();
 					}
 				} else {
@@ -315,7 +315,7 @@ public class PlayerInfo extends Util {
 					proto.sendServerPacket(player, packetSpawn);
 //					proto.sendServerPacket(player, packetGamemode);
 					proto.sendServerPacket(player, packetAttach);
-				} catch (InvocationTargetException e) {
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			} else if (args[1].equals("maps")) {
@@ -2099,7 +2099,7 @@ public class PlayerInfo extends Util {
 						proto.sendServerPacket(p, p2);
 						proto.sendServerPacket(p, p3);
 						proto.sendServerPacket(p, p4);
-					} catch (InvocationTargetException e) {
+					} catch (Exception e) {
 						e.printStackTrace();
 					}
 				}
@@ -2306,13 +2306,15 @@ public class PlayerInfo extends Util {
 					: message("achieved-name-prefix") + name
 			);
 			
-			PacketContainer chatPacket = proto.createPacket(PacketType.Play.Server.CHAT);
-			chatPacket.getChatComponents().write(0, WrappedChatComponent.fromJson(newJson));
-			chatPacket.getChatTypes().write(0, ChatType.SYSTEM);
+			PacketContainer chatPacket = proto.createPacket(PacketType.Play.Server.SYSTEM_CHAT);
+//			chatPacket.getChatComponents().write(0, WrappedChatComponent.fromJson(newJson));
+			chatPacket.getStrings().write(0, newJson);
+			chatPacket.getIntegers().write(0, 1);
+//			chatPacket.getChatTypes().write(0, ChatType.SYSTEM);
 			
 			try {
 				proto.sendServerPacket(p, chatPacket);
-			} catch (InvocationTargetException e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
@@ -2568,7 +2570,7 @@ public class PlayerInfo extends Util {
 		try {
 			proto.sendServerPacket(thisPlayer, packetSpawn);
 			proto.sendServerPacket(thisPlayer, packetMount);
-		} catch (InvocationTargetException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
@@ -2591,7 +2593,7 @@ public class PlayerInfo extends Util {
 		
 		try {
 			proto.sendServerPacket(thisPlayer, packetDestroy);
-		} catch (InvocationTargetException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
@@ -2661,7 +2663,7 @@ public class PlayerInfo extends Util {
 		try {
 			proto.sendServerPacket(player, packetCamera);
 			proto.sendServerPacket(player, packetDestroy);
-		} catch (InvocationTargetException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		

@@ -601,7 +601,7 @@ public class Listeners extends Util implements Listener {
 						try {
 							proto.sendServerPacket(player, packetSpawn);
 							proto.sendServerPacket(player, packetCamera);
-						} catch (InvocationTargetException e) {
+						} catch (Exception e) {
 							e.printStackTrace();
 						}
 					}
@@ -1591,20 +1591,20 @@ public class Listeners extends Util implements Listener {
 		match.addKill(killerPI, pi, gotLife, lives, finish, cause.name());
 		pi.applyNextKit();
 		
-		plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
-			public void run() {
-				PacketContainer packet = proto.createPacket(PacketType.Play.Client.CLIENT_COMMAND);
-//				packet.getShorts().write(0, (short) 0);
-//				packet.getClientCommands().write(0, ClientCommand.OPEN_INVENTORY_ACHIEVEMENT);
-				try {
-					proto.recieveClientPacket(player, packet);
-				} catch (IllegalAccessException e) {
-					e.printStackTrace();
-				} catch (InvocationTargetException e) {
-					e.printStackTrace();
-				}
-			}
-		}, 4);
+//		plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+//			public void run() {
+//				PacketContainer packet = proto.createPacket(PacketType.Play.Client.CLIENT_COMMAND);
+////				packet.getShorts().write(0, (short) 0);
+////				packet.getClientCommands().write(0, ClientCommand.OPEN_INVENTORY_ACHIEVEMENT);
+//				try {
+//					proto.recieveClientPacket(player, packet);
+//				} catch (IllegalAccessException e) {
+//					e.printStackTrace();
+//				} catch (InvocationTargetException e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		}, 4);
 	}
 	
 	@EventHandler(priority = EventPriority.HIGHEST)
@@ -1874,7 +1874,7 @@ public class Listeners extends Util implements Listener {
 				if (p == player) continue;
 				try {
 					proto.sendServerPacket(p, packetBoatMove);
-				} catch (InvocationTargetException e) {
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
