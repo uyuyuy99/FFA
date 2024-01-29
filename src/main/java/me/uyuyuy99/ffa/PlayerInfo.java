@@ -2309,7 +2309,7 @@ public class PlayerInfo extends Util {
 			PacketContainer chatPacket = proto.createPacket(PacketType.Play.Server.SYSTEM_CHAT);
 //			chatPacket.getChatComponents().write(0, WrappedChatComponent.fromJson(newJson));
 			chatPacket.getStrings().write(0, newJson);
-			chatPacket.getIntegers().write(0, 1);
+//			chatPacket.getIntegers().write(0, 1);
 //			chatPacket.getChatTypes().write(0, ChatType.SYSTEM);
 			
 			try {
